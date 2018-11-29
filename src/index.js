@@ -17,7 +17,6 @@ app.use('/signin', routerSignIn);
 const routerUsuarios = require("./routes/usuarios");
 const authValidator = require('./middlewares/authValidator');
 app.use("/usuarios", authValidator, routerUsuarios);
-// app.use("/usuarios", routerUsuarios);
 // ----------------------------------------------------------
 app.get("/*", (req, res) => {
     res.end("Archivo no encontrado");
