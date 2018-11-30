@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt-nodejs');
 const User = require('../models/usuarioModel');
 
 const secret = '56asiyuhdjkbasdhtiy8ou192e';
+
 router.post('/', (req, res) => {
     User.findOne({ email: req.body.email })
         .then(user => {
