@@ -16,6 +16,7 @@ class Home extends Component {
         const email = decoded.email;
         return (
             <div className="Acceso">
+                Bienvenido: {email}
                 <button type="submit" onClick={this.logout.bind(this)} className="badge badge-pill badge-danger">Salir</button>
                 {/* {id} - {email}
                 
