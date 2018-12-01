@@ -23,7 +23,9 @@ class SignUp extends Component {
     signup(e){
         e.preventDefault();
         console.log(this.state);
-        fetch('http://localhost:3000/signup', {
+        const localhostSignUp = "http://localhost:3000/signup";
+        const herokuSignUp = "https://plantillabackend.herokuapp.com/signup";
+        fetch(localhostSignUp, {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {

@@ -13,7 +13,9 @@ class Home extends Component {
 
     componentDidMount(){
         const token = localStorage.getItem('token');
-        fetch('/usuarios', {
+        const localhostUsuarios ="/usuarios"
+        const herokuUsuarios = "https://plantillabackend.herokuapp.com/usuarios"
+        fetch(herokuUsuarios, {
             method: 'GET',
             headers: {
                 token,
