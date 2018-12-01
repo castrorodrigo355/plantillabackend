@@ -8,9 +8,9 @@ class Acceso extends Component {
     render(){
         return (
             <div className="Acceso">
-                {/* <div id="Accordion" role="tablist" aria-multiselectable="true" className="border" style={{margin:"10px", padding:"5px"}}>
+                {/* <div id="Accordion" role="tablist" aria-multiselectable="true" style={{margin:"10px", padding:"5px"}}>
                     
-                    <div className="panel panel-default">
+                    <div className="panel panel-default border" style={{margin:"10px"}}>
                         <div className="panel-heading" role="tab" id="HeadingOne">
                             <h4 className="panel-title">
                                 <div data-toggle="collapse" data-parent="#Accordion" href="#CollapseOne" aria-expanded="true" aria-controls="CollapseOne">
@@ -24,7 +24,7 @@ class Acceso extends Component {
                         </div>
                     </div>
 
-                    <div className="panel panel-default">
+                    <div className="panel panel-default border" style={{margin:"10px"}}>
                         <div className="panel-heading" role="tab" id="HeadingTwo">
                             <h4 className="panel-title">
                                 <div className="collapsed" data-toggle="collapse" data-parent="#Accordion" href="#CollapseTwo" aria-expanded="false" aria-controls="CollapseTwo">
@@ -42,33 +42,33 @@ class Acceso extends Component {
                 
                 <div className="accordion" id="accordionExample" role="tablist" aria-multiselectable="true" style={{margin:"10px", padding:"5px"}}>
 
-                    <div className="card">
+                    <div className="card bg-transparent" style={{marginBottom:"5px"}}>
                         <div className="card-header" id="headingOne">
                             <h5 className="mb-0">
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Iniciar Sesion
+                                <h4><span className="badge badge-pill badge-info">Iniciar sesion</span></h4>
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div className="card-body">
-                            <SignIn/>
+                                <SignIn/>
                             </div>
                         </div>
                     </div>
                     
-                    <div className="card">
+                    <div className="card bg-transparent">
                         <div className="card-header" id="headingTwo">
                             <h5 className="mb-0">
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Registrarse
+                                <h4><span className="badge badge-pill badge-info">Registrarse</span></h4>
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                             <div className="card-body">
-                            <SignUp/>
+                                <SignUp/>
                             </div>
                         </div>
                     </div>

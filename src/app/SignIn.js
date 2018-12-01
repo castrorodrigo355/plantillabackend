@@ -37,6 +37,10 @@ class SignIn extends Component {
                 }else{
                     console.log({Error: "Token not found"})
                     console.log(object.token)
+                    this.setState({
+                        email: '',
+                        password: ''
+                    })
                     alert("Error de logueo")
                 }
             })
@@ -52,11 +56,11 @@ class SignIn extends Component {
                                 <h4><span className="badge badge-pill badge-info">Ingresar</span></h4>
                             </div>
                             <div className="form-group">
-                                    <input type="email" style={{color:"white"}} name="email" className="form-control bg-transparent" placeholder="Email" 
+                                    <input type="email" name="email" className="form-control bg-transparent" placeholder="Email" 
                                         onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
                             </div>
                             <div className="form-group">
-                                <input type="password" style={{color:"white"}} name="password" className="form-control bg-transparent" placeholder="Password" 
+                                <input type="password" name="password" className="form-control bg-transparent" placeholder="Password" 
                                         onChange={this.handleInputChange.bind(this)} value={this.state.password}/>
                             </div>
                             <button type="submit" className="badge badge-pill badge-info">OK</button>

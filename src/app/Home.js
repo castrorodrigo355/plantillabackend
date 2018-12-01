@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import jwt_decode from 'jwt-decode';
-import './App.css';
+import './Acceso.css';
 
 class Home extends Component {
+
+    logout(){
+        localStorage.removeItem('token');
+        window.location.href = "/";
+    }
 
     render() {
         const token = localStorage.getItem('token');
@@ -10,8 +15,9 @@ class Home extends Component {
         const id = decoded.userId;
         const email = decoded.email;
         return (
-            <div>
-                {id} - {email}
+            <div className="Acceso">
+                <button type="submit" onClick={this.logout.bind(this)} className="badge badge-pill badge-danger">Salir</button>
+                {/* {id} - {email}
                 
                 <div className="card border m-2 bg-transparent" style={{maxWidth: "18rem"}}>
                     <div className="card-header">
@@ -23,7 +29,7 @@ class Home extends Component {
                     <div className="card-footer">
                         
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

@@ -32,7 +32,16 @@ class SignUp extends Component {
         })
             .then(result => result.json())
             .then(object => {
-                console.log(object);
+                this.setState({
+                    email: '',
+                    username: '',
+                    password: ''
+                })
+                if(object.message === "Created user successfully"){
+                    alert("Usuario creado con exito !!!")
+                } else {
+                    alert("Vuelva a ingresar sus datos por favor.")
+                }
                 // localStorage.setItem('token', object.token);
                 // window.location.href = "/";
             })
@@ -41,22 +50,22 @@ class SignUp extends Component {
     render(){
         return (
             <div className="container">
-                <div className="card m-2 bg-transparent">
+                <div className="card border m-2 bg-transparent">
                     <div className="card-body">
                         <form style={{textAlign:"center"}} onSubmit={this.signup.bind(this)}>
                             <div className="form-group">
                                 <h4><span className="badge badge-pill badge-info">Registrarse</span></h4>
                             </div>
                             <div className="form-group">
-                                    <input type="email" style={{color:"white"}} name="email" className="form-control bg-transparent" placeholder="Email" 
+                                    <input type="email" name="email" className="form-control bg-transparent" placeholder="Email" 
                                         onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
                             </div>
                             <div className="form-group">
-                                <input type="text" style={{color:"white"}} name="username" className="form-control bg-transparent" placeholder="Username" 
+                                <input type="text" name="username" className="form-control bg-transparent" placeholder="Username" 
                                         onChange={this.handleInputChange.bind(this)} value={this.state.username}/>
                             </div>
                             <div className="form-group">
-                                <input type="password" style={{color:"white"}} name="password" className="form-control bg-transparent" placeholder="Password" 
+                                <input type="password" name="password" className="form-control bg-transparent" placeholder="Password" 
                                         onChange={this.handleInputChange.bind(this)} value={this.state.password}/>
                             </div>
                             <button type="submit" className="badge badge-pill badge-info">OK</button>
