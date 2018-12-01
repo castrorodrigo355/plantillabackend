@@ -44,23 +44,25 @@ class SignIn extends Component {
 
     render(){
         return (
-            <div>
-                <form style={{textAlign:"center"}} onSubmit={this.signin.bind(this)} className="container">
-                    <div className="form-group">
-                        <h4><span className="badge badge-pill badge-info">Ingresar</span></h4>
+            <div className="container">
+                <div className="card border m-2 bg-transparent">
+                    <div className="card-body">
+                        <form style={{textAlign:"center"}} onSubmit={this.signin.bind(this)}>
+                            <div className="form-group">
+                                <h4><span className="badge badge-pill badge-info">Ingresar</span></h4>
+                            </div>
+                            <div className="form-group">
+                                    <input type="email" style={{color:"white"}} name="email" className="form-control bg-transparent" placeholder="Email" 
+                                        onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
+                            </div>
+                            <div className="form-group">
+                                <input type="password" style={{color:"white"}} name="password" className="form-control bg-transparent" placeholder="Password" 
+                                        onChange={this.handleInputChange.bind(this)} value={this.state.password}/>
+                            </div>
+                            <button type="submit" className="badge badge-pill badge-info">OK</button>
+                        </form>
                     </div>
-                    <div className="form-group">
-                            <input type="email" name="email" className="form-control" placeholder="Email" 
-                                onChange={this.handleInputChange.bind(this)} value={this.state.email}/>
-                    </div>
-                    <div className="form-group">
-                        <input type="password" name="password" className="form-control" placeholder="Password" 
-                                onChange={this.handleInputChange.bind(this)} value={this.state.password}/>
-                    </div>
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-primary bg-info">OK</button>
-                    </div>
-                </form>
+                </div>
             </div>
         )
     }
