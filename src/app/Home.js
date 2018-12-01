@@ -4,6 +4,30 @@ import './Acceso.css';
 
 class Home extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            usuarios: []
+        };
+    }
+
+    componentDidMount(){
+        const token = localStorage.getItem('token');
+        fetch('/usuarios', {
+            method: 'GET',
+            headers: {
+                token,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(usuarios => {
+            this.setState({usuarios})
+        })
+        .catch(err => console.log(err));
+    }
+
     logout(){
         localStorage.removeItem('token');
         window.location.href = "/";
@@ -18,6 +42,17 @@ class Home extends Component {
             <div className="Acceso">
                 Bienvenido: {email}
                 <button type="submit" onClick={this.logout.bind(this)} className="badge badge-pill badge-danger">Salir</button>
+                <ul>
+                    {
+                        this.state.usuarios && this.state.usuarios.map((usuario, i) => {
+                            return(
+                                <li key={i}>
+                                    {usuario.email}
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
                 {/* {id} - {email}
                 
                 <div className="card border m-2 bg-transparent" style={{maxWidth: "18rem"}}>
