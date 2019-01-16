@@ -58,7 +58,7 @@ class Acceso extends Component {
                         </div>
                     </div>
                     
-                    <div className="card bg-transparent">
+                    {/* <div className="card bg-transparent">
                         <div className="card-header" id="headingTwo">
                             <h5 className="mb-0">
                                 <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -71,7 +71,7 @@ class Acceso extends Component {
                                 <SignUp/>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
                     
