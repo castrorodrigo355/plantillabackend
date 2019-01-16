@@ -5,7 +5,7 @@ const authValidator = require('../middlewares/authValidator');
 //const routerVuelos = require("./vuelos")
 
 // CREAR UN USUARIO
-router.post("/", (req, res) => {
+router.post("/", authValidator, (req, res) => {
     let data = req.body;
     let user = new User(data);
     user.save()
