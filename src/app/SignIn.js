@@ -26,9 +26,7 @@ class SignIn extends Component {
         fetch(herokuSignIn, {
             method: 'POST',
             body: JSON.stringify(this.state),
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            }
+            headers: {"Content-Type": "application/json; charset=utf-8"}
         })
             .then(result => result.json())
             .then(object => {
